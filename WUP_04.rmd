@@ -36,9 +36,26 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+basicCN <- ggplot(GSScsv,aes(x=DEGREE,y=WORDSUM))
+
+
+basicCN + geom_boxplot()
+```
+
+There is a significant difference in the boxplot, as the Graduate group's first quartile is notably higher than the High School group's third quartile. Similarly, the Junior College group's first quartile exceeds the Less than High School group's third quartile. These comparisons highlight the gap in WORDSUM scores between different education levels. 
+
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+
+```{r}
+favstats(WORDSUM~DEGREE,data=GSScsv)
+```
+
+The data shows significant disparities in WORDSUM scores by education level. Graduates have the highest first quartile of ten and median of eleven, while Less Than High School scores the lowest first quartile of seven and median of eight. The Graduate group's narrow interquartile range indicates consistent high performance, in contrast to the wider interquartile ranges for High School and Junior College. Graduates averaging ten point ten and Less Than High School averaging 10.10 and Less Than High School averaging 7.75. 
 
 ## Inferential Results
 
